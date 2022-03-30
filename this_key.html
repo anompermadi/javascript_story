@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This key</title>
+</head>
+<body>
+    <script>
+        //this in function
+        console.info(this);
+
+        function sample(){
+            console.info(this);
+
+            function inner(){
+                console.info(this);
+            }
+
+            inner();
+        }
+
+        sample();
+
+        //this in object method
+        const person = {
+            name: "Arsenius",
+            sayHei: function(names){
+                //this = person
+                // console.info(this.name);
+                console.info(`Hi ${names}, my name is ${this.name}`);
+            }
+        }
+
+        person.sayHei("Anom")
+
+    </script>
+</body>
+</html>

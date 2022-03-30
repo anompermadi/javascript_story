@@ -117,7 +117,69 @@
 
         console.info(factorialRecursive(5));
         
+        //function generator
+        function* createNames(){
+            yield "Arsenius";
+            yield "Anom";
+            yield "Permadi";
+        }
 
+        const names = createNames();
+        for (const name of names){
+            console.log(name);
+        }
+
+        function* buatGanjil(values){
+            for (let i = 1; i <= values; i++){
+                if (i % 2 === 1){
+                    console.info(`Yield ${i}`)
+                    yield i;
+                }
+            }
+        }
+
+        const angkaGanjil = buatGanjil(100);
+        // for (const angka of angkaGanjil){
+        //     console.info(angka);
+        // }
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+
+        //arrow function
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say)
+        }
+
+        sayHello("Arsenius");
+
+        //arrow function without block
+        const sayHellos = (name) => console.info(`Good day ${name}`);
+
+        sayHellos("Arsenius");
+
+        //arrow function return value
+        const sum = (first, second) => first + second;
+
+        console.info(sum(100, 100));
+
+        // const sum = (first, second) => {
+        //     return first + second;
+        // }
+
+        // console.info(sum(100, 100));
+
+        //arrow function without () if only 1 parameter needed
+        const sayH = name => console.info(`Hello ${name}`);
+        sayH("Permadi")
+
+        //arrow function as parameter
+        function giveName(calls){
+            calls("Arsenius");
+        }
+
+        giveName((name) => console.info(`Hello ${name}`));
+        
     </script>
     
 </body>

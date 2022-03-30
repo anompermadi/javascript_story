@@ -58,6 +58,40 @@
 
         outer();
 
+        //global scope
+        let counter = 0;
+
+        //function in global scope
+        function hitMe(){
+            //local scope hitMe
+            counter++;
+        }
+
+        //function in global scope
+        function other(){
+            //local scope other
+        }
+
+        hitMe();
+        hitMe();
+
+        console.info(counter);
+
+        function first(){
+            // local scope first
+            let firstVariable = "First";
+        }
+
+        function second(){
+            // local scope second
+            let secondVariable = "Second";
+        }
+
+        first();
+        second();
+
+        
+
     </script>
     
 </body>

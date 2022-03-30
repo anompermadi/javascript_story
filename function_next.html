@@ -28,8 +28,35 @@
         giveMeName(say);
         giveMeName(said);
 
-        //anonymous function
-        
+        //anonymous function in variable
+        let greating = function (name){
+            document.writeln(`<p>Hello ${name}</p>`);
+        }
+
+        greating("Arsenius");
+        greating("Anom");
+
+        //anonymous function in parameter
+        function giveMeName(callback){
+            callback("Anom");
+        }
+
+        giveMeName(greating);
+
+        giveMeName(function(name){
+            document.writeln(`<p>Hi ${name}</p>`);
+        });
+
+        //nested function
+        function outer(){
+            function inner(){
+                console.info("Inner");
+            }
+            inner();
+            inner();
+        }
+
+        outer();
 
     </script>
     

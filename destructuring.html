@@ -18,6 +18,28 @@
             console.info(lastName);
             console.info(others);
         }
+
+        //destructuring object
+        {
+            const person = {
+
+                firstName: "Arsenius",
+                lastName: "Permadi",
+                address: {
+                    street: "Street",
+                    city: "Malang",
+                    country: "Indonesia"
+                },
+                hobby: "Game",
+                channel: "Arsenius"
+            };
+
+            const {firstName, lastName, address, ...others} = person;
+            console.info(lastName);
+            console.info(address);
+            console.info(others);
+
+        }
     </script>
 </body>
 </html>

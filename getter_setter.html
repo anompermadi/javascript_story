@@ -19,6 +19,23 @@
         person.firstName = "Anom";
         console.info(person.fullName);
     
+        //setter
+        const yourname = {
+            first: "Anom",
+            second: "Permadi",
+            get full(){
+                return `${this.first} ${this.second}`;
+            },
+            set full(value){
+                const array = value.split(" ");
+                this.first = array[0];
+                this.second = array[1];
+            }
+        };
+
+        yourname.full = "Arsenius Anom";
+        console.table(yourname);
+
     </script>
 </body>
 </html>

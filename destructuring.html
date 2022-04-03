@@ -40,6 +40,94 @@
             console.info(others);
 
         }
+
+        //destructuring nested object
+        {
+            const person = {
+
+            firstName: "Arsenius",
+            lastName: "Permadi",
+            address: {
+                street: "Street",
+                city: "Malang",
+                country: "Indonesia"
+            },
+            hobby: "Game",
+            channel: "Arsenius"
+            };
+
+            const {firstName, lastName, address:{street, country}, ...others} = person;
+            console.info(lastName);
+            console.info(country);
+            console.info(others);
+        }
+
+        //destructuring function parameter (object)
+        {
+            function displayPerson({firstName, middleName, lastName}){
+                console.info(firstName);
+                console.info(middleName);
+                console.info(lastName);
+            }
+
+            const person = {
+                firstName: "Arsenius",
+                middleName: "Anom",
+                lastName: "Permadi"
+            };
+            displayPerson(person);
+        }
+
+        //destructuring function parameter (array)
+        {
+            function sum([first, second]){
+                return first + second;
+            }
+
+            console.info(sum([10, 10]))
+            console.info(sum([20, 10]))
+        }
+
+        //default value (array)
+        {
+            const names = ["Arsenius", "Anom"];
+            const [firstName, middleName, lastName = "Permadi"] = names;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        //default value (object)
+        {
+            const person = {
+                firstName: "arsenius",
+                lastName: "permadi",
+                middleName: "bro"
+            };
+
+            const {firstName, middleName = "anom", lastName} = person;
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        //change variable name
+        {
+            const person = {
+                firstName: "arsenius",
+                lastName: "permadi",
+                // middleName: "bro"
+            };
+
+            const {firstName: first, 
+            middleName: middle = "anom", 
+            lastName: last} = person;
+
+            console.info(first);
+            console.info(middle);
+            console.info(last);
+        }
     </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor function oop</title>
+</head>
+<body>
+    <script>
+        function Member(firstName, lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function (name){
+                console.info(`Hei ${name}, my name is ${this.lastName}`)
+            };
+        };
+
+        const man1 = new Member("Arsenius", "Anom");
+
+        const man2 = new Member("", "Permadi");
+        
+        man2.sayHello("Bro");
+
+        console.log(man1);
+        console.log(man2);
+
+    </script>
+
+</body>
+</html>

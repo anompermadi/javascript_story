@@ -20,8 +20,42 @@
         console.info(man1);
 
         //constructor in class
-        
+        class Member {
+            constructor(name){
+                console.info(`Membuat member ${name}`);
+            }
+        }
 
+        const man2 = new Member("Anom");
+
+        //property in class
+        class Members{
+            constructor(names){
+                this.names = names;
+            }
+
+        }
+
+        const man3 = new Members("arsenius");
+        console.info(man3);
+        console.info(man3.names);
+
+        //method in class
+        class Member1{
+            constructor(name1){
+                this.name = name1;
+            }
+
+            sayH(name2){
+                console.info(`Hello ${name2}, my name is ${this.name}`);
+            }
+        }
+
+        const man4 = new Member1("Permadi");
+        console.info(man4);
+        console.info(man4.name);
+
+        man4.sayH("bro");
 
     </script>
 </body>

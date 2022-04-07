@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static field</title>
+</head>
+<body>
+    <script>
+        class Config{
+            static name = "Javascript Mastery";
+            static version = 1.0;
+            static author = "arsenius Anom"
+        }
+
+        const configuration = new Config();
+        console.info(configuration);// will not show 
+
+        Config.author = "Anom Permadi"
+
+        console.info(Config.name);
+        console.info(Config.version);
+        console.info(Config.author);
+
+
+    </script>
+</body>
+</html>

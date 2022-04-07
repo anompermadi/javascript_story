@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operator instance of class</title>
+</head>
+<body>
+    <script>
+        class Employee{
+
+        }
+
+        //class inheritance
+        class Manager extends Employee{
+
+        }
+
+        const man1 = new Employee();
+        const man2 = new Manager();
+
+        console.info (man1 instanceof Employee);
+        console.info (man2 instanceof Employee);
+
+    </script>
+</body>
+</html>

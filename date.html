@@ -18,6 +18,24 @@
             const date3 = new Date(1649773715170);
             console.info(date3);
         }
+
+        {
+            //epoch & unix timestamp
+
+            const date1 = new Date();
+            console.info(date1.getTime());
+
+            console.info(Date.now());
+
+            const date2 = new Date(2020, 10, 10);
+            console.info(date2.getTime());
+
+            const date3 = new Date(1649773715170);
+            console.info(date3.getTime());
+
+            const date4 = new Date(2021, 0, 1, 10, 10, 50, 100);
+            console.info(date4.getTime());
+        }
     </script>
 </body>
 </html>

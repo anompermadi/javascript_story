@@ -12,7 +12,8 @@
             lastName: "Anom"
         };
 
-        Object.freeze(person);
+        // Object.freeze(person);
+        Object.seal(person);
 
         person.firstName = "Permadi";
         delete person.lastName;

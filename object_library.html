@@ -7,18 +7,47 @@
 </head>
 <body>
     <script>
-        const person = {
+        {
+            // object freeze and seal
+            const person = {
             firstName: "Arsenius",
             lastName: "Anom"
-        };
+            };
 
-        // Object.freeze(person);
-        Object.seal(person);
+            // Object.freeze(person);
+            Object.seal(person);
 
-        person.firstName = "Permadi";
-        delete person.lastName;
+            person.firstName = "Permadi";
+            delete person.lastName;
 
-        console.info(person);
+            console.info(person);
+        }
+
+        {
+            //object assign
+            const target = {
+                firstName: "Arsenius"
+            };
+            const sources = {
+                lastName: "anom"
+            };
+
+            Object.assign(target, sources);
+            console.info(target);
+            console.info(sources);
+
+        }
+
+        {
+            // object property name & value
+            const person = {
+                firstName: "Arsenius",
+                lastName: "Anom"
+            };
+
+            console.info(Object.values(person));
+            console.info(Object.getOwnPropertyNames(person));
+        }
 
     </script>
 </body>

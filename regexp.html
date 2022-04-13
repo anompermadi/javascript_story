@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regexp</title>
+</head>
+<body>
+    <script>
+      {
+          //create regex
+
+          const regex1 = /arsenius/;
+          const regex2 = new RegExp("arsenius");
+          const regex3 = new RegExp(/arsenius/);
+      }
+      {
+          // test regex
+
+          const name = "arsenius anom permadi arsenius";
+          const regex = /an/;
+          console.info(regex.exec("tidak ada"));
+
+          const result = regex.exec(name);
+          console.info(result);
+
+          const test = regex.test(name);
+          console.info(test);
+          console.info(regex.test("tidak ada"));
+      }  
+
+      {
+            //   regex modifier
+
+            const name = "arsenius anom\npermadi\nArsenius Permadi";
+            const regex1 = /^ars.nius/igm
+            const regex2 = /permadi/ig
+
+            let result;
+            while ((result = regex1.exec(name)) !== null){
+                console.info(result);
+            }
+
+            while ((result = regex2.exec(name)) !== null){
+                console.info(result);
+            }
+
+        {
+            // advanced regex
+
+            const regex = /arsen[aeiou]/ig
+
+            const name = "arsenius arsenal arseno ars arsen";
+
+            let result;
+            while ((result = regex.exec(name)) !== null){
+                console.info(result);
+            }
+
+        }
+
+        {
+            const name = "anom arsenius arsenal arseno ars arsen";
+
+            console.info(name.match(/arsen[aeiou]/ig));
+            console.info(name.search(/arsen[aeiou]/ig));
+
+            console.info(name.replace(/arsen[aeiou]/i, "mon"));
+            console.info(name.replaceAll(/arsen[aeiou]/ig, "mon"));
+
+            console.info(name.split(/e/ig));
+        }
+
+      }
+    </script>
+</body>
+</html>

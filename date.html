@@ -36,6 +36,28 @@
             const date4 = new Date(2021, 0, 1, 10, 10, 50, 100);
             console.info(date4.getTime());
         }
+
+        {
+            //parsing date
+            const parseTimestamp = Date.parse("2020-12-18T10:10:10.123+07:00")
+            console.info(parseTimestamp);
+
+            const parseDate = new Date(parseTimestamp);
+            console.info(parseDate);
+        }
+        {
+            //getter and setter
+            const date = new Date();
+
+            console.info(date.getFullYear());
+            console.info(date.getMonth());
+            console.info(date.getDate());
+            console.info(date.getHours());
+            console.info(date.getMinutes());
+            console.info(date.getSeconds());
+            console.info(date.getMilliseconds());
+            console.info(date.getTimezoneOffset());
+        }
     </script>
 </body>
 </html>

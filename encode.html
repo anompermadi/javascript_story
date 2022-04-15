@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encode library</title>
+</head>
+<body>
+    <script>
+        {
+            //encode and decode URI
+
+            const url = "https://sample.com/?name=Arsenius Anom Permadi";
+            console.info(url);
+
+            const encoded = encodeURI(url);
+            console.info(encoded);
+
+            const decoded = decodeURI(encoded);
+            console.info(decoded);
+        }
+
+        {
+            // encode decode URIComponent
+
+            const value = "Arsenius&Anom=Permadi";
+            const url = "https://sample.com/?name=";
+            console.info(url + value);
+
+            const encoded = encodeURIComponent(value);
+            console.info(url + encoded);
+
+            const decoded = decodeURIComponent(encoded);
+            console.info(url + decoded);
+
+        }
+    </script>
+</body>
+</html>

@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modules</title>
-    <script src="scripts/library.js"></script>
+    <title>With module</title>
+    <script type="module" src="scripts/say.js"></script>
 </head>
 <body>
-    <script>
+    <script type="module">
+
+        import {sayHello, sayGoodBye, name} from "./scripts/say.js"
         sayHello("Arsenius");
         sayGoodBye("Anom");
 

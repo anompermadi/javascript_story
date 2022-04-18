@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>default class</title>
+    <title>Default Named</title>
 </head>
 <body>
     <script type="module">
-        import {default as hi} from "./scripts/default_class.js";
+        import name, {content, title} from "./scripts/default_named.js";
 
-        const person = new hi("Permadi")
-        person.sayHi();
+        console.info(title);
+        console.info(content);
+        console.info(name);
     </script>
 </body>
 </html>

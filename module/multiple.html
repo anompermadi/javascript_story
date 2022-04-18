@@ -8,11 +8,15 @@
 <body>
     <script type="module">
         import {company, sum, Company} from "./scripts/multiple.js";
+        import {company as comp, sum as add, Company as Co} from "./scripts/multiple.js";
 
         console.info(company);
-        console.info(sum(10, 10));
+        console.info(comp);
+        console.info(add(10, 10));
+        console.info(sum(20, 10));
 
         const a = new Company();
+        const b = new Co();
     </script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module object</title>
+</head>
+<body>
+    <script type="module">
+        import * as object from "./scripts/module_object.js";
+
+        console.info(object.firstName);
+        console.info(object.middleName);
+        console.info(object.lastName);
+
+        object.hello();
+        
+        const person = new object.Person();
+        console.info(person.name);
+    </script>
+</body>
+</html>

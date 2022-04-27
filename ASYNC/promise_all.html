@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>promise</title>
+    <title>promise all</title>
 </head>
 <body>
-
     <table>
         <tbody>
             <tr>
@@ -25,10 +24,8 @@
     </table>
 
     <script>
-        
         function getProducts(product){
             return new Promise(function (resolve, reject){
-
                 const ajax = new XMLHttpRequest();
                 ajax.open("GET", `api/${product}.json`);
                 ajax.onload = function (){
@@ -39,29 +36,19 @@
                     }
                 };
                 ajax.send();
-                });
+            })
         }
-            
 
-        getProducts("product")
-            .then(function (response){
-                return JSON.parse(response);
-            })
-            .then(function (json){
-                document.getElementById("id").textContent = json.id;
-                document.getElementById("name").textContent = json.name;
-                document.getElementById("price").textContent = json.price;
+        const promise = Promise.all([
+            getProducts("product1"),
+            getProducts("product2"),
+            getProducts("product3")
+        ]);
 
-            })
-            .catch(function(error){
-                document.getElementById("id").textContent = error;
-                document.getElementById("name").textContent = error;
-                document.getElementById("price").textContent = error;
-            })
-            .finally(function(){
-                console.info("finally");
-            })
+        promise.then(function (product){
+            console.info(product);
+        });
+        
     </script>
-    
 </body>
 </html>

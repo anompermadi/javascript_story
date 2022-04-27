@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ajax send json</title>
+    <title>send Form data using AJAX</title>
 </head>
 <body>
     <form>
         <label for="username">
-            Username :
+            Username:
             <input type="text" id="username" name="username">
         </label>
         <br>
         <label for="password">
-            Password :
+            Password:
             <input type="password" id="password" name="password">
         </label>
         <br>
@@ -21,21 +21,20 @@
     </form>
     <h1 id="response"></h1>
     <script>
-        function doLogin(){
+        function doLogin() {
             const ajax = new XMLHttpRequest();
             ajax.open("POST", "https://hookb.in/dmqQqmgGYaIx8YjjN3lB");
-            ajax.onload = function (){
+            ajax.onload = function(){
                 const response = document.getElementById("response");
                 response.innerText = ajax.responseText;
             }
-            ajax.setRequestHeader("Content-Type", "application/json");
+            ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-            const json = {
-                username: document.getElementById("username").value,
-                password: document.getElementById("password").value
-            };
+            const form = new URLSearchParams();
+            form.append("username", document.getElementById("username").value);
+            form.append("password", document.getElementById("password").value);
 
-            ajax.send(JSON.stringify(json));
+            ajax.send(form);
         }
 
         document.getElementById("login").onclick = doLogin;
